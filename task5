@@ -1,0 +1,32 @@
+abstract class Shape2D {
+    abstract void resize(double factor);
+    abstract void rotate(double degrees);
+}
+
+class Circle2D extends Shape2D {
+    double radius = 1;
+    void resize(double factor) { radius *= factor; }
+    void rotate(double degrees) { System.out.println("Circle rotation has no visible effect."); }
+}
+
+class Square extends Shape2D {
+    double side = 1;
+    void resize(double factor) { side *= factor; }
+    void rotate(double degrees) { System.out.println("Square rotated by " + degrees + " degrees."); }
+}
+
+class Triangle2D extends Shape2D {
+    void resize(double factor) { System.out.println("Triangle resized by factor " + factor); }
+    void rotate(double degrees) { System.out.println("Triangle rotated by " + degrees + " degrees."); }
+}
+
+// Usage
+public class ManipulationDemo {
+    public static void main(String[] args) {
+        Shape2D[] shapes = { new Circle2D(), new Square(), new Triangle2D() };
+        for (Shape2D s : shapes) {
+            s.resize(2);
+            s.rotate(45);
+        }
+    }
+}
