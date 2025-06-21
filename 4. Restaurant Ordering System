@@ -1,0 +1,31 @@
+abstract class MenuItem {
+    abstract void prepare();
+    abstract void serve();
+}
+
+class Appetizer extends MenuItem {
+    void prepare() { System.out.println("Preparing appetizer"); }
+    void serve() { System.out.println("Serving appetizer"); }
+}
+
+class MainCourse extends MenuItem {
+    void prepare() { System.out.println("Preparing main course"); }
+    void serve() { System.out.println("Serving main course"); }
+}
+
+class Beverage extends MenuItem {
+    void prepare() { System.out.println("Preparing beverage"); }
+    void serve() { System.out.println("Serving beverage"); }
+}
+
+// Usage
+public class RestaurantDemo {
+    public static void main(String[] args) {
+        MenuItem[] items = { new Appetizer(), new MainCourse(), new Beverage() };
+        for (MenuItem item : items) {
+            item.prepare();
+            item.serve();
+        }
+    }
+}
+
