@@ -1,0 +1,29 @@
+abstract class PaymentMethod {
+    abstract boolean validate();
+    abstract void processTransaction(double amount);
+}
+
+class CreditCard extends PaymentMethod {
+    boolean validate() { return true; /* validation logic */ }
+    void processTransaction(double amount) { System.out.println("Credit Card paid: " + amount); }
+}
+
+class PayPal extends PaymentMethod {
+    boolean validate() { return true; /* validation logic */ }
+    void processTransaction(double amount) { System.out.println("PayPal paid: " + amount); }
+}
+
+class BankTransfer extends PaymentMethod {
+    boolean validate() { return true; /* validation logic */ }
+    void processTransaction(double amount) { System.out.println("Bank Transfer paid: " + amount); }
+}
+
+// Usage
+public class PaymentDemo {
+    public static void main(String[] args) {
+        PaymentMethod[] methods = { new CreditCard(), new PayPal(), new BankTransfer() };
+        for (PaymentMethod pm : methods) {
+            if (pm.validate()) pm.processTransaction(100.0);
+        }
+    }
+}
