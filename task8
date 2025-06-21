@@ -1,0 +1,20 @@
+class Employee {
+    double baseSalary = 3000;
+    double calculateSalary() { return baseSalary; }
+}
+
+class Manager extends Employee {
+    double bonus = 1000;
+    @Override
+    double calculateSalary() { return baseSalary + bonus; }
+}
+
+// Usage
+public class PayrollDemo {
+    public static void main(String[] args) {
+        Employee emp = new Employee();
+        Manager mgr = new Manager();
+        System.out.println("Employee Salary: " + emp.calculateSalary());
+        System.out.println("Manager Salary: " + mgr.calculateSalary());
+    }
+}
