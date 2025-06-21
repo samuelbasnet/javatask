@@ -1,0 +1,23 @@
+class Character {
+    void attack() { System.out.println("Character attacks!"); }
+}
+
+class Warrior extends Character {
+    @Override
+    void attack() { System.out.println("Warrior swings sword!"); }
+}
+
+class Mage extends Character {
+    @Override
+    void attack() { System.out.println("Mage casts spell!"); }
+}
+
+// Usage
+public class GameDemo {
+    public static void main(String[] args) {
+        Character[] chars = { new Character(), new Warrior(), new Mage() };
+        for (Character c : chars) {
+            c.attack();
+        }
+    }
+}
