@@ -1,0 +1,25 @@
+abstract class Instrument {
+    abstract void playSound();
+}
+
+class Piano extends Instrument {
+    void playSound() { System.out.println("Piano sound!"); }
+}
+
+class Guitar extends Instrument {
+    void playSound() { System.out.println("Guitar strum!"); }
+}
+
+class Violin extends Instrument {
+    void playSound() { System.out.println("Violin melody!"); }
+}
+
+// Usage
+public class MusicDemo {
+    public static void main(String[] args) {
+        Instrument[] instruments = { new Piano(), new Guitar(), new Violin() };
+        for (Instrument i : instruments) {
+            i.playSound();
+        }
+    }
+}
